@@ -45,10 +45,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
 
           {/* Middle section - Search */}
           <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-            <SearchBar
-              toggleFilterSection={toggleFilterSection}
-              showFilterSection={showFilterSection}
-            />
+            <SearchBar />
           </div>
 
           {/* Right section - Actions */}

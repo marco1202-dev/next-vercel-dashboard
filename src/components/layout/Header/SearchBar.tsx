@@ -15,13 +15,12 @@ const SUGGESTIONS = {
   ],
 };
 
-// Add the interface back with proper typing
+// Remove the props from the interface if they're not used
 interface SearchBarProps {
-  toggleFilterSection?: () => void;
-  showFilterSection?: boolean;
+  // No props needed
 }
 
-export const SearchBar = ({ toggleFilterSection, showFilterSection }: SearchBarProps = {}) => {
+export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
