@@ -467,10 +467,10 @@ export default function PlayerPage() {
                   </div>
 
                   <p className="mb-4 text-base">
-                    Let's not kid ourselves: first impressions are really important. ✨ When you
-                    meet someone for the first time, the way you look and act is seared into their
-                    brain, and it will undoubtedly influence any future dealings you have with that
-                    person. ✨ ✨
+                    Let&apos;s not kid ourselves: first impressions are really important. ✨ When
+                    you meet someone for the first time, the way you look and act is seared into
+                    their brain, and it will undoubtedly influence any future dealings you have with
+                    that person. ✨ ✨
                   </p>
 
                   <p className="mb-4 text-base">
