@@ -18,11 +18,7 @@ const StatCard = ({ title, value, icon, change, actions }: StatCardProps) => {
         </div>
         <div className="p-2 bg-blue-50 rounded-md">{icon}</div>
       </div>
-      {actions && (
-        <div className="flex mt-4 space-x-2 flex-wrap sm:flex-nowrap">
-          {actions}
-        </div>
-      )}
+      {actions && <div className="flex mt-4 space-x-2 flex-wrap sm:flex-nowrap">{actions}</div>}
       {change && (
         <div className="mt-4">
           <div className="flex items-center">
@@ -35,4 +31,4 @@ const StatCard = ({ title, value, icon, change, actions }: StatCardProps) => {
   );
 };
 
-export default StatCard; 
+export default StatCard;

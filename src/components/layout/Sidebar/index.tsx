@@ -13,11 +13,7 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
-const Sidebar = ({
-  isMobile = false,
-  isOpen = false,
-  onClose,
-}: SidebarProps) => {
+const Sidebar = ({ isMobile = false, isOpen = false, onClose }: SidebarProps) => {
   const dispatch = useAppDispatch();
   const sidebarExpanded = useAppSelector((state) => state.ui.sidebarExpanded);
 
@@ -45,21 +41,15 @@ const Sidebar = ({
               } transition-all duration-300 ease-in-out hidden md:flex md:flex-col`
         } bg-white border-r border-gray-200`}
       >
-        <SidebarHeader 
-          sidebarExpanded={sidebarExpanded} 
-          isMobile={isMobile} 
-          toggleSidebarWidth={toggleSidebarWidth} 
+        <SidebarHeader
+          sidebarExpanded={sidebarExpanded}
+          isMobile={isMobile}
+          toggleSidebarWidth={toggleSidebarWidth}
         />
 
-        <SidebarNavigation 
-          sidebarExpanded={sidebarExpanded} 
-          isMobile={isMobile} 
-        />
+        <SidebarNavigation sidebarExpanded={sidebarExpanded} isMobile={isMobile} />
 
-        <SidebarFooter 
-          sidebarExpanded={sidebarExpanded} 
-          isMobile={isMobile} 
-        />
+        <SidebarFooter sidebarExpanded={sidebarExpanded} isMobile={isMobile} />
       </div>
 
       {/* Overlay to close mobile sidebar when clicking outside */}
@@ -74,4 +64,4 @@ const Sidebar = ({
   );
 };
 
-export default Sidebar; 
+export default Sidebar;

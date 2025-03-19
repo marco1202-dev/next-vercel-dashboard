@@ -18,6 +18,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@/components/icons";
+import Image from "next/image";
 
 interface SidebarProps {
   isMobile?: boolean;
@@ -25,11 +26,7 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
-const Sidebar = ({
-  isMobile = false,
-  isOpen = false,
-  onClose,
-}: SidebarProps) => {
+const Sidebar = ({ isMobile = false, isOpen = false, onClose }: SidebarProps) => {
   const pathname = usePathname();
   const dispatch = useAppDispatch();
   const sidebarExpanded = useAppSelector((state) => state.ui.sidebarExpanded);
@@ -66,20 +63,18 @@ const Sidebar = ({
         <div className="flex items-center h-16 px-4 border-b border-gray-100">
           <Link href="/dashboard" className="flex items-center">
             <div className="flex-shrink-0">
-              <img
+              <Image
                 src="https://i.ibb.co/VVPmzb2/SEMI-LOGO.png"
                 alt="Logo"
+                width={32}
+                height={32}
                 className="h-8 w-auto"
               />
             </div>
             {(sidebarExpanded || isMobile) && (
               <>
-                <span className="ml-2 text-xl font-semibold text-blue-800">
-                  TASK
-                </span>
-                <span className="ml-1 text-xl font-semibold text-gray-400">
-                  X
-                </span>
+                <span className="ml-2 text-xl font-semibold text-blue-800">TASK</span>
+                <span className="ml-1 text-xl font-semibold text-gray-400">X</span>
               </>
             )}
           </Link>
@@ -89,9 +84,7 @@ const Sidebar = ({
             <button
               onClick={toggleSidebarWidth}
               className="ml-auto text-gray-500 hover:text-gray-700 focus:outline-none"
-              aria-label={
-                sidebarExpanded ? "Collapse sidebar" : "Expand sidebar"
-              }
+              aria-label={sidebarExpanded ? "Collapse sidebar" : "Expand sidebar"}
             >
               {sidebarExpanded ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </button>
@@ -119,9 +112,7 @@ const Sidebar = ({
                 }`}
               >
                 <HomeIcon />
-                {(sidebarExpanded || isMobile) && (
-                  <span className="ml-3">Dashboard</span>
-                )}
+                {(sidebarExpanded || isMobile) && <span className="ml-3">Dashboard</span>}
               </Link>
 
               <Link
@@ -135,9 +126,7 @@ const Sidebar = ({
                 }`}
               >
                 <SearchIcon />
-                {(sidebarExpanded || isMobile) && (
-                  <span className="ml-3">Explore</span>
-                )}
+                {(sidebarExpanded || isMobile) && <span className="ml-3">Explore</span>}
               </Link>
             </nav>
           </div>
@@ -161,9 +150,7 @@ const Sidebar = ({
                 }`}
               >
                 <CollectionsIcon />
-                {(sidebarExpanded || isMobile) && (
-                  <span className="ml-3">Collections</span>
-                )}
+                {(sidebarExpanded || isMobile) && <span className="ml-3">Collections</span>}
               </Link>
 
               <Link
@@ -177,9 +164,7 @@ const Sidebar = ({
                 }`}
               >
                 <BookmarkIcon />
-                {(sidebarExpanded || isMobile) && (
-                  <span className="ml-3">Bookmarks</span>
-                )}
+                {(sidebarExpanded || isMobile) && <span className="ml-3">Bookmarks</span>}
               </Link>
 
               <Link
@@ -193,9 +178,7 @@ const Sidebar = ({
                 }`}
               >
                 <LibraryIcon />
-                {(sidebarExpanded || isMobile) && (
-                  <span className="ml-3">My Library</span>
-                )}
+                {(sidebarExpanded || isMobile) && <span className="ml-3">My Library</span>}
               </Link>
 
               <Link
@@ -209,20 +192,14 @@ const Sidebar = ({
                 }`}
               >
                 <HistoryIcon />
-                {(sidebarExpanded || isMobile) && (
-                  <span className="ml-3">View History</span>
-                )}
+                {(sidebarExpanded || isMobile) && <span className="ml-3">View History</span>}
               </Link>
             </nav>
           </div>
         </div>
 
         {/* Bottom section */}
-        <div
-          className={`${
-            sidebarExpanded ? "p-4" : "p-2"
-          } border-t border-gray-200`}
-        >
+        <div className={`${sidebarExpanded ? "p-4" : "p-2"} border-t border-gray-200`}>
           <nav className="space-y-1">
             {sidebarExpanded && (
               <>

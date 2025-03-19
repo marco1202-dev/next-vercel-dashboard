@@ -1,27 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import { 
-  SearchIcon, 
-  ClockIcon, 
-  TagIcon, 
-  DocumentIcon 
-} from "@/components/icons";
+import { SearchIcon, ClockIcon, TagIcon, DocumentIcon } from "@/components/icons";
 
 // Sample suggestions for autocomplete by category
 const SUGGESTIONS = {
-  recent: [
-    "Next.js routing",
-    "React hooks",
-  ],
-  popular: [
-    "Tailwind CSS responsive design",
-    "Redux state management",
-    "TypeScript interfaces",
-  ],
+  recent: ["Next.js routing", "React hooks"],
+  popular: ["Tailwind CSS responsive design", "Redux state management", "TypeScript interfaces"],
   articles: [
     "JavaScript promises explained",
     "Building a dashboard with Next.js",
     "Modern CSS techniques",
-  ]
+  ],
 };
 
 const MobileSearch = () => {
@@ -46,13 +34,13 @@ const MobileSearch = () => {
     } else {
       // Filter all categories based on the search term
       const filtered = {
-        recent: SUGGESTIONS.recent.filter(suggestion =>
+        recent: SUGGESTIONS.recent.filter((suggestion) =>
           suggestion.toLowerCase().includes(searchTerm.toLowerCase())
         ),
-        popular: SUGGESTIONS.popular.filter(suggestion =>
+        popular: SUGGESTIONS.popular.filter((suggestion) =>
           suggestion.toLowerCase().includes(searchTerm.toLowerCase())
         ),
-        articles: SUGGESTIONS.articles.filter(suggestion =>
+        articles: SUGGESTIONS.articles.filter((suggestion) =>
           suggestion.toLowerCase().includes(searchTerm.toLowerCase())
         ),
       };
@@ -63,10 +51,7 @@ const MobileSearch = () => {
   // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target as Node)
-      ) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
     };
@@ -88,9 +73,9 @@ const MobileSearch = () => {
   };
 
   // Check if we have any suggestions to show
-  const hasAnySuggestions = 
-    filteredSuggestions.recent.length > 0 || 
-    filteredSuggestions.popular.length > 0 || 
+  const hasAnySuggestions =
+    filteredSuggestions.recent.length > 0 ||
+    filteredSuggestions.popular.length > 0 ||
     filteredSuggestions.articles.length > 0;
 
   return (
@@ -122,7 +107,7 @@ const MobileSearch = () => {
                 </div>
                 <ul>
                   {filteredSuggestions.recent.map((suggestion, index) => (
-                    <li 
+                    <li
                       key={`recent-${index}`}
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
                       onClick={() => handleSuggestionClick(suggestion)}
@@ -146,7 +131,7 @@ const MobileSearch = () => {
                 </div>
                 <ul>
                   {filteredSuggestions.popular.map((suggestion, index) => (
-                    <li 
+                    <li
                       key={`popular-${index}`}
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
                       onClick={() => handleSuggestionClick(suggestion)}
@@ -170,7 +155,7 @@ const MobileSearch = () => {
                 </div>
                 <ul>
                   {filteredSuggestions.articles.map((suggestion, index) => (
-                    <li 
+                    <li
                       key={`article-${index}`}
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
                       onClick={() => handleSuggestionClick(suggestion)}

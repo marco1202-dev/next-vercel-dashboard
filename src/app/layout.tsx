@@ -18,16 +18,10 @@ export const metadata: Metadata = {
   description: "Next.js application with Redux, TypeScript, and Tailwind CSS",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

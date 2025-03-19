@@ -30,4 +30,4 @@ const ActivityPanel = ({ count }: ActivityPanelProps) => {
   );
 };
 
-export default ActivityPanel; 
+export default ActivityPanel;

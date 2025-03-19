@@ -5,9 +5,7 @@ import React from "react";
 export const RecentActivity = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow">
-      <h2 className="text-lg font-medium text-gray-900 mb-4">
-        Recent Activity
-      </h2>
+      <h2 className="text-lg font-medium text-gray-900 mb-4">Recent Activity</h2>
       <div className="space-y-4">
         {[1, 2, 3, 4, 5].map((num) => (
           <div key={num} className="flex items-center">
@@ -27,4 +25,4 @@ export const RecentActivity = () => {
       </div>
     </div>
   );
-}; 
+};

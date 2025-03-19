@@ -1,31 +1,28 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { useAppDispatch } from "@/redux/hooks";
-import Link from "next/link";
+import React, { useState } from "react";
+import { MenuIcon } from "@/components/icons";
 import { SearchBar } from "./SearchBar";
 import { FilterSection } from "./FilterSection";
 import { UserMenu } from "./UserMenu";
-import { MenuIcon } from "@/components/icons";
 
 interface HeaderProps {
   onMenuClick?: () => void;
 }
 
 const Header = ({ onMenuClick }: HeaderProps) => {
-  const dispatch = useAppDispatch();
   const [showFilterSection, setShowFilterSection] = useState(false);
 
   // Handle mobile menu click
   const handleMenuClick = () => {
-    console.log("Mobile menu button clicked in Header");
+    // Menu button clicked
     if (onMenuClick) {
       onMenuClick();
     }
   };
 
   const toggleFilterSection = () => {
-    console.log("Toggling filter section:", !showFilterSection);
+    console.log("Filter section toggled");
     setShowFilterSection(!showFilterSection);
   };
 

@@ -17,10 +17,7 @@ interface SidebarNavigationProps {
   isMobile: boolean;
 }
 
-export const SidebarNavigation = ({ 
-  sidebarExpanded, 
-  isMobile 
-}: SidebarNavigationProps) => {
+export const SidebarNavigation = ({ sidebarExpanded, isMobile }: SidebarNavigationProps) => {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -32,9 +29,7 @@ export const SidebarNavigation = ({
       {/* EXPLORE section */}
       <div className={`${sidebarExpanded ? "px-4" : "px-2"} mb-4`}>
         {sidebarExpanded && (
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-            EXPLORE
-          </h3>
+          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">EXPLORE</h3>
         )}
         <nav className={`${sidebarExpanded ? "mt-2" : ""} space-y-1`}>
           <Link
@@ -48,9 +43,7 @@ export const SidebarNavigation = ({
             }`}
           >
             <HomeIcon />
-            {(sidebarExpanded || isMobile) && (
-              <span className="ml-3">Dashboard</span>
-            )}
+            {(sidebarExpanded || isMobile) && <span className="ml-3">Dashboard</span>}
           </Link>
 
           <Link
@@ -64,9 +57,7 @@ export const SidebarNavigation = ({
             }`}
           >
             <SearchIcon />
-            {(sidebarExpanded || isMobile) && (
-              <span className="ml-3">Explore</span>
-            )}
+            {(sidebarExpanded || isMobile) && <span className="ml-3">Explore</span>}
           </Link>
         </nav>
       </div>
@@ -74,9 +65,7 @@ export const SidebarNavigation = ({
       {/* LIBRARY section */}
       <div className={`${sidebarExpanded ? "px-4" : "px-2"} mb-4`}>
         {sidebarExpanded && (
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-            LIBRARY
-          </h3>
+          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">LIBRARY</h3>
         )}
         <nav className={`${sidebarExpanded ? "mt-2" : ""} space-y-1`}>
           <Link
@@ -90,9 +79,7 @@ export const SidebarNavigation = ({
             }`}
           >
             <CollectionsIcon />
-            {(sidebarExpanded || isMobile) && (
-              <span className="ml-3">Collections</span>
-            )}
+            {(sidebarExpanded || isMobile) && <span className="ml-3">Collections</span>}
           </Link>
 
           <Link
@@ -106,9 +93,7 @@ export const SidebarNavigation = ({
             }`}
           >
             <BookmarkIcon />
-            {(sidebarExpanded || isMobile) && (
-              <span className="ml-3">Bookmarks</span>
-            )}
+            {(sidebarExpanded || isMobile) && <span className="ml-3">Bookmarks</span>}
           </Link>
 
           <Link
@@ -122,9 +107,7 @@ export const SidebarNavigation = ({
             }`}
           >
             <LibraryIcon />
-            {(sidebarExpanded || isMobile) && (
-              <span className="ml-3">My Library</span>
-            )}
+            {(sidebarExpanded || isMobile) && <span className="ml-3">My Library</span>}
           </Link>
 
           <Link
@@ -138,12 +121,10 @@ export const SidebarNavigation = ({
             }`}
           >
             <HistoryIcon />
-            {(sidebarExpanded || isMobile) && (
-              <span className="ml-3">View History</span>
-            )}
+            {(sidebarExpanded || isMobile) && <span className="ml-3">View History</span>}
           </Link>
         </nav>
       </div>
     </div>
   );
-}; 
+};

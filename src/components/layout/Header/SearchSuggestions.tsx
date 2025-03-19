@@ -12,9 +12,9 @@ interface SearchSuggestionsProps {
   handleSuggestionClick: (suggestion: string) => void;
 }
 
-export const SearchSuggestions = ({ 
-  filteredSuggestions, 
-  handleSuggestionClick 
+export const SearchSuggestions = ({
+  filteredSuggestions,
+  handleSuggestionClick,
 }: SearchSuggestionsProps) => {
   return (
     <div className="absolute mt-1 w-full bg-white shadow-lg rounded-md border border-gray-200 z-50">
@@ -91,4 +91,4 @@ export const SearchSuggestions = ({
       )}
     </div>
   );
-}; 
+};

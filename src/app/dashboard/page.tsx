@@ -14,9 +14,7 @@ export default function Dashboard() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 space-y-4 sm:space-y-0">
-        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900">
-          Dashboard
-        </h1>
+        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900">Dashboard</h1>
         <div className="mb-4 flex justify-end">
           <Link
             href="/"

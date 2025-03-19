@@ -7,11 +7,7 @@ import { SearchSuggestions } from "./SearchSuggestions";
 // Sample suggestions for autocomplete by category
 const SUGGESTIONS = {
   recent: ["Next.js routing", "React hooks"],
-  popular: [
-    "Tailwind CSS responsive design",
-    "Redux state management",
-    "TypeScript interfaces",
-  ],
+  popular: ["Tailwind CSS responsive design", "Redux state management", "TypeScript interfaces"],
   articles: [
     "JavaScript promises explained",
     "Building a dashboard with Next.js",
@@ -19,12 +15,7 @@ const SUGGESTIONS = {
   ],
 };
 
-interface SearchBarProps {
-  toggleFilterSection: () => void;
-  showFilterSection: boolean;
-}
-
-export const SearchBar = ({ toggleFilterSection, showFilterSection }: SearchBarProps) => {
+export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -70,10 +61,7 @@ export const SearchBar = ({ toggleFilterSection, showFilterSection }: SearchBarP
   // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target as Node)
-      ) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
     };
@@ -130,11 +118,11 @@ export const SearchBar = ({ toggleFilterSection, showFilterSection }: SearchBarP
 
       {/* Search suggestions dropdown */}
       {showSuggestions && hasAnySuggestions && (
-        <SearchSuggestions 
-          filteredSuggestions={filteredSuggestions} 
-          handleSuggestionClick={handleSuggestionClick} 
+        <SearchSuggestions
+          filteredSuggestions={filteredSuggestions}
+          handleSuggestionClick={handleSuggestionClick}
         />
       )}
     </div>
   );
-}; 
+};

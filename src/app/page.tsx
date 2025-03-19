@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Counter from "@/components/Counter";
 import Link from "next/link";
+import DynamicCounter from "@/components/DynamicCounter";
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
         </h1>
 
         <div className="mb-4 w-full max-w-md mx-auto">
-          <Counter />
+          <DynamicCounter />
         </div>
 
         <div className="mb-10 w-full max-w-md mx-auto text-center">

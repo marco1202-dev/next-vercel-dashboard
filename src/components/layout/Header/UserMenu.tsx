@@ -28,7 +28,7 @@ export const UserMenu = ({ toggleFilterSection }: UserMenuProps) => {
       </div>
 
       {/* Notification button */}
-      <button 
+      <button
         className="hidden md:flex items-center justify-center text-gray-500 hover:text-gray-900 relative"
         aria-label="Notifications"
       >
@@ -37,7 +37,7 @@ export const UserMenu = ({ toggleFilterSection }: UserMenuProps) => {
       </button>
 
       {/* History button */}
-      <button 
+      <button
         className="hidden md:flex items-center justify-center text-gray-500 hover:text-gray-900"
         aria-label="History"
       >
@@ -45,7 +45,7 @@ export const UserMenu = ({ toggleFilterSection }: UserMenuProps) => {
       </button>
 
       {/* User profile */}
-      <button 
+      <button
         className="flex items-center justify-center bg-blue-100 text-blue-800 rounded-full h-8 w-8 font-medium"
         aria-label="User profile"
       >
@@ -53,4 +53,4 @@ export const UserMenu = ({ toggleFilterSection }: UserMenuProps) => {
       </button>
     </div>
   );
-}; 
+};

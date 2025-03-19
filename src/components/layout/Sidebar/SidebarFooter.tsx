@@ -3,21 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  PlaylistIcon,
-  NotificationIcon,
-  SettingsIcon,
-} from "@/components/icons";
+import { PlaylistIcon, NotificationIcon, SettingsIcon } from "@/components/icons";
 
 interface SidebarFooterProps {
   sidebarExpanded: boolean;
   isMobile: boolean;
 }
 
-export const SidebarFooter = ({ 
-  sidebarExpanded, 
-  isMobile 
-}: SidebarFooterProps) => {
+export const SidebarFooter = ({ sidebarExpanded, isMobile }: SidebarFooterProps) => {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -25,11 +18,7 @@ export const SidebarFooter = ({
   };
 
   return (
-    <div
-      className={`${
-        sidebarExpanded ? "p-4" : "p-2"
-      } border-t border-gray-200`}
-    >
+    <div className={`${sidebarExpanded ? "p-4" : "p-2"} border-t border-gray-200`}>
       <nav className="space-y-1">
         {sidebarExpanded || isMobile ? (
           <>
@@ -91,4 +80,4 @@ export const SidebarFooter = ({
       </nav>
     </div>
   );
-}; 
+};

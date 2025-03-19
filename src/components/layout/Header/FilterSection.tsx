@@ -96,14 +96,9 @@ export const FilterSection = () => {
   };
 
   return (
-    <div
-      className="bg-gray-50 border-b border-gray-200 py-3 px-4 sm:px-6 lg:px-8"
-      ref={filterRef}
-    >
+    <div className="bg-gray-50 border-b border-gray-200 py-3 px-4 sm:px-6 lg:px-8" ref={filterRef}>
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-        <div className="text-sm font-medium text-gray-700 mb-2 sm:mb-0">
-          Filter Results
-        </div>
+        <div className="text-sm font-medium text-gray-700 mb-2 sm:mb-0">Filter Results</div>
         <div className="flex flex-wrap gap-2">
           <div className="relative" ref={languageRef}>
             <button
@@ -217,4 +212,4 @@ export const FilterSection = () => {
       </div>
     </div>
   );
-}; 
+};

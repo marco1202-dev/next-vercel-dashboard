@@ -7,11 +7,7 @@ import MobileFooter from "@/components/layout/MobileFooter";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { toggleMobileSidebar, setMobileSidebarOpen } from "@/redux/features/uiSlice";
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const dispatch = useAppDispatch();
   const sidebarExpanded = useAppSelector((state) => state.ui.sidebarExpanded);
   const mobileSidebarOpen = useAppSelector((state) => state.ui.mobileSidebarOpen);
@@ -29,26 +25,22 @@ export default function DashboardLayout({
     <div className="h-screen flex overflow-hidden bg-gray-50">
       {/* Sidebar for desktop */}
       <Sidebar isMobile={false} />
-      
+
       {/* Mobile sidebar */}
-      <Sidebar 
-        isMobile={true} 
-        isOpen={mobileSidebarOpen} 
-        onClose={closeMobileSidebar} 
-      />
-      
+      <Sidebar isMobile={true} isOpen={mobileSidebarOpen} onClose={closeMobileSidebar} />
+
       {/* Main content */}
-      <div className={`flex-1 flex flex-col overflow-hidden ${
-        sidebarExpanded ? "md:ml-64" : "md:ml-20"
-      } transition-all duration-300`}>
+      <div
+        className={`flex-1 flex flex-col overflow-hidden ${
+          sidebarExpanded ? "md:ml-64" : "md:ml-20"
+        } transition-all duration-300`}
+      >
         <Header onMenuClick={handleMenuClick} />
-        <main className="flex-1 overflow-y-auto p-4 pb-16 md:pb-4">
-          {children}
-        </main>
-        
+        <main className="flex-1 overflow-y-auto p-4 pb-16 md:pb-4">{children}</main>
+
         {/* Mobile Footer Navigation */}
         <MobileFooter />
       </div>
     </div>
   );
-} 
+}

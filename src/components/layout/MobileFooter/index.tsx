@@ -3,13 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  HomeIcon,
-  SearchIcon,
-  LibraryIcon,
-  PlaylistIcon,
-  UserIcon,
-} from "@/components/icons";
+import { HomeIcon, SearchIcon, LibraryIcon, PlaylistIcon, UserIcon } from "@/components/icons";
 
 const MobileFooter = () => {
   const pathname = usePathname();
@@ -75,4 +69,4 @@ const MobileFooter = () => {
   );
 };
 
-export default MobileFooter; 
+export default MobileFooter;

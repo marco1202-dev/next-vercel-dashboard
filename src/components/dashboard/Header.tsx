@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { useAppDispatch } from "@/redux/hooks";
-import { toggleMobileSidebar } from "@/redux/features/uiSlice";
-import Link from "next/link";
 import {
   SearchIcon,
   ChevronDownIcon,
@@ -22,11 +19,7 @@ interface HeaderProps {
 // Sample suggestions for autocomplete by category
 const SUGGESTIONS = {
   recent: ["Next.js routing", "React hooks"],
-  popular: [
-    "Tailwind CSS responsive design",
-    "Redux state management",
-    "TypeScript interfaces",
-  ],
+  popular: ["Tailwind CSS responsive design", "Redux state management", "TypeScript interfaces"],
   articles: [
     "JavaScript promises explained",
     "Building a dashboard with Next.js",
@@ -56,7 +49,6 @@ const CONTENT_OPTIONS = ["Title & Content", "Title", "Content"];
 const SORT_OPTIONS = ["Best Match", "Popularity", "Newest", "Oldest"];
 
 const Header = ({ onMenuClick }: HeaderProps) => {
-  const dispatch = useAppDispatch();
   const [searchTerm, setSearchTerm] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showFilterSection, setShowFilterSection] = useState(false);
@@ -123,10 +115,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
   // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target as Node)
-      ) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
     };
@@ -237,9 +226,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             </button>
 
             {/* Page title - only visible on desktop */}
-            <h1 className="hidden md:block text-xl font-semibold text-gray-900 ml-2">
-              Dashboard
-            </h1>
+            <h1 className="hidden md:block text-xl font-semibold text-gray-900 ml-2">Dashboard</h1>
           </div>
 
           {/* Center - Search bar */}
@@ -353,18 +340,16 @@ const Header = ({ onMenuClick }: HeaderProps) => {
                         </div>
                       </div>
                       <ul>
-                        {filteredSuggestions.popular.map(
-                          (suggestion, index) => (
-                            <li
-                              key={`popular-${index}`}
-                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
-                              onClick={() => handleSuggestionClick(suggestion)}
-                            >
-                              <TagIcon />
-                              <span className="ml-3">{suggestion}</span>
-                            </li>
-                          )
-                        )}
+                        {filteredSuggestions.popular.map((suggestion, index) => (
+                          <li
+                            key={`popular-${index}`}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
+                            onClick={() => handleSuggestionClick(suggestion)}
+                          >
+                            <TagIcon />
+                            <span className="ml-3">{suggestion}</span>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   )}
@@ -379,18 +364,16 @@ const Header = ({ onMenuClick }: HeaderProps) => {
                         </div>
                       </div>
                       <ul>
-                        {filteredSuggestions.articles.map(
-                          (suggestion, index) => (
-                            <li
-                              key={`article-${index}`}
-                              className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
-                              onClick={() => handleSuggestionClick(suggestion)}
-                            >
-                              <DocumentIcon />
-                              <span className="ml-3">{suggestion}</span>
-                            </li>
-                          )
-                        )}
+                        {filteredSuggestions.articles.map((suggestion, index) => (
+                          <li
+                            key={`article-${index}`}
+                            className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-gray-700 flex items-center"
+                            onClick={() => handleSuggestionClick(suggestion)}
+                          >
+                            <DocumentIcon />
+                            <span className="ml-3">{suggestion}</span>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   )}
@@ -406,9 +389,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
               <button
                 onClick={toggleFilterSection}
                 className={`flex items-center justify-center ${
-                  showFilterSection
-                    ? "text-blue-600"
-                    : "text-gray-500 hover:text-gray-900"
+                  showFilterSection ? "text-blue-600" : "text-gray-500 hover:text-gray-900"
                 }`}
               >
                 <FilterIcon />
@@ -438,9 +419,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
       {showFilterSection && (
         <div className="border-t border-gray-100 bg-white">
           <div className="px-4 py-3 flex items-center">
-            <span className="text-sm font-medium text-gray-700 mr-4">
-              Filter & Sort
-            </span>
+            <span className="text-sm font-medium text-gray-700 mr-4">Filter & Sort</span>
 
             <div className="flex space-x-2">
               <button

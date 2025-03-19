@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface UiState {
   sidebarExpanded: boolean;
@@ -11,7 +11,7 @@ const initialState: UiState = {
 };
 
 export const uiSlice = createSlice({
-  name: 'ui',
+  name: "ui",
   initialState,
   reducers: {
     toggleSidebar: (state) => {
@@ -21,7 +21,7 @@ export const uiSlice = createSlice({
       state.sidebarExpanded = action.payload;
     },
     toggleMobileSidebar: (state) => {
-      console.log("Toggling mobile sidebar in Redux", state.mobileSidebarOpen);
+      console.log("Mobile sidebar toggled in Redux");
       state.mobileSidebarOpen = !state.mobileSidebarOpen;
     },
     setMobileSidebarOpen: (state, action: PayloadAction<boolean>) => {
@@ -30,11 +30,7 @@ export const uiSlice = createSlice({
   },
 });
 
-export const { 
-  toggleSidebar, 
-  setSidebarExpanded, 
-  toggleMobileSidebar, 
-  setMobileSidebarOpen 
-} = uiSlice.actions;
+export const { toggleSidebar, setSidebarExpanded, toggleMobileSidebar, setMobileSidebarOpen } =
+  uiSlice.actions;
 
-export default uiSlice.reducer; 
+export default uiSlice.reducer;

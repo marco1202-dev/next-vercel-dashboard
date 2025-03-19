@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { increment, decrement, incrementByAmount } from "@/redux/features/counterSlice";
 
@@ -8,6 +8,20 @@ const Counter = () => {
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState(1);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return (
+      <div className="p-6 bg-white rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-4">Redux Counter</h2>
+        <div className="text-4xl font-bold text-center mb-4">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-md">
@@ -45,4 +59,4 @@ const Counter = () => {
   );
 };
 
-export default Counter; 
+export default Counter;

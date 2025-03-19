@@ -10,13 +10,11 @@ interface DashboardStatsProps {
 
 export const DashboardStats = ({ count }: DashboardStatsProps) => {
   const dispatch = useAppDispatch();
-  
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
       <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-sm font-medium text-gray-500 mb-2">
-          Counter Value
-        </h2>
+        <h2 className="text-sm font-medium text-gray-500 mb-2">Counter Value</h2>
         <div className="flex items-center justify-between">
           <p className="text-3xl font-bold">{count}</p>
           <div className="text-blue-500">
@@ -54,9 +52,7 @@ export const DashboardStats = ({ count }: DashboardStatsProps) => {
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-sm font-medium text-gray-500 mb-2">
-          Total Articles
-        </h2>
+        <h2 className="text-sm font-medium text-gray-500 mb-2">Total Articles</h2>
         <div className="flex items-center justify-between">
           <p className="text-3xl font-bold">125</p>
           <div className="text-purple-500">
@@ -80,9 +76,7 @@ export const DashboardStats = ({ count }: DashboardStatsProps) => {
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-sm font-medium text-gray-500 mb-2">
-          Total Collections
-        </h2>
+        <h2 className="text-sm font-medium text-gray-500 mb-2">Total Collections</h2>
         <div className="flex items-center justify-between">
           <p className="text-3xl font-bold">42</p>
           <div className="text-yellow-500">
@@ -106,9 +100,7 @@ export const DashboardStats = ({ count }: DashboardStatsProps) => {
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-sm font-medium text-gray-500 mb-2">
-          Analytics
-        </h2>
+        <h2 className="text-sm font-medium text-gray-500 mb-2">Analytics</h2>
         <div className="flex items-center justify-between">
           <p className="text-3xl font-bold">87%</p>
           <div className="text-indigo-500">
@@ -132,4 +124,4 @@ export const DashboardStats = ({ count }: DashboardStatsProps) => {
       </div>
     </div>
   );
-}; 
+};
