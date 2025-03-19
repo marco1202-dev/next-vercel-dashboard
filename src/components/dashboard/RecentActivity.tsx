@@ -1,32 +1,30 @@
+"use client";
+
 import React from "react";
 
-const RecentActivity = () => {
+export const RecentActivity = () => {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
-      <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-200">
-        <h3 className="text-base sm:text-lg font-medium text-gray-900">Recent Activity</h3>
-      </div>
-      <div className="p-4 sm:p-6">
-        <div className="space-y-3 sm:space-y-4">
-          {[...Array(5)].map((_, i) => (
-            <div key={i} className="flex items-start">
-              <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 text-sm sm:text-base">
-                {i + 1}
-              </div>
-              <div className="ml-3">
-                <p className="text-xs sm:text-sm font-medium text-gray-900">
-                  Counter {i % 2 === 0 ? "increased" : "decreased"}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {i + 1} minute{i !== 0 ? "s" : ""} ago
-                </p>
-              </div>
+    <div className="bg-white p-6 rounded-lg shadow">
+      <h2 className="text-lg font-medium text-gray-900 mb-4">
+        Recent Activity
+      </h2>
+      <div className="space-y-4">
+        {[1, 2, 3, 4, 5].map((num) => (
+          <div key={num} className="flex items-center">
+            <div className="flex-shrink-0 h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-500">
+              {num}
             </div>
-          ))}
-        </div>
+            <div className="ml-4">
+              <p className="text-sm font-medium text-gray-900">
+                {num % 2 === 0 ? "Counter decreased" : "Counter increased"}
+              </p>
+              <p className="text-sm text-gray-500">
+                {num} minute{num !== 1 ? "s" : ""} ago
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
-};
-
-export default RecentActivity; 
+}; 

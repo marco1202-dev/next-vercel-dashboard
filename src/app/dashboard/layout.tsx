@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Header from "@/components/dashboard/Header";
-import Sidebar from "@/components/dashboard/Sidebar";
-import MobileFooter from "@/components/dashboard/MobileFooter";
+import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
+import MobileFooter from "@/components/layout/MobileFooter";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { toggleMobileSidebar, setMobileSidebarOpen } from "@/redux/features/uiSlice";
 
