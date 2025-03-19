@@ -15,11 +15,6 @@ const SUGGESTIONS = {
   ],
 };
 
-// Remove the props from the interface if they're not used
-interface SearchBarProps {
-  // No props needed
-}
-
 export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
