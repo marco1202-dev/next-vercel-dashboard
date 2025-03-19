@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React from "react";
@@ -130,7 +131,7 @@ const ClockIcon = () => (
 // Sample chapters
 const chapters = [
   { id: 1, title: "Introduction", active: true },
-  { id: 2, title: "Schrödinger's Cat Quantum Breakthrough", active: true },
+  { id: 2, title: "Schrödinger&apos;s Cat Quantum Breakthrough", active: true },
   { id: 3, title: "Antimony Atom Spin Qudit", active: true },
   { id: 4, title: "Error Resilience Achievements", active: true },
   { id: 5, title: "Future Directions in Quantum", active: true },
@@ -238,7 +239,9 @@ export default function PlayerPage() {
               <div className="w-full md:w-3/4">
                 {/* Introduction section */}
                 <div className="text-xs text-gray-500 uppercase mb-1">INTRODUCTION</div>
-                <h2 className="text-2xl font-bold mb-2">Schrödinger's Cat Quantum Breakthrough</h2>
+                <h2 className="text-2xl font-bold mb-2">
+                  Schrödinger&apos;s Cat Quantum Breakthrough
+                </h2>
 
                 <div className="flex items-center mb-4">
                   <div className="flex items-center mr-4">
@@ -337,8 +340,8 @@ export default function PlayerPage() {
                     <span className="float-left text-5xl font-serif mr-2 mt-1 leading-none">B</span>
                     ased on reports from Nature Physics, researchers at the University of New South
                     Wales have achieved a significant breakthrough in quantum computing by creating
-                    a Schrödinger's cat state inside a silicon chip, potentially solving a major
-                    problem in quantum error correction and computing efficiency.
+                    a Schrödinger&apos;s cat state inside a silicon chip, potentially solving a
+                    major problem in quantum error correction and computing efficiency.
                   </p>
                 </div>
 
@@ -595,7 +598,7 @@ export default function PlayerPage() {
                         key={chapter.id}
                         className={`${chapter.id === 3 ? "text-blue-600 font-medium" : "text-gray-700"}`}
                       >
-                        {chapter.title}
+                        {chapter.title.replace("'", "&apos;")}
                       </li>
                     ))}
                   </ul>
