@@ -36,7 +36,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         } transition-all duration-300`}
       >
         <Header onMenuClick={handleMenuClick} />
-        <main className="flex-1 overflow-y-auto p-4 pb-16 md:pb-4">{children}</main>
+        <main className="flex-1 overflow-y-auto pb-16 md:pb-4">{children}</main>
 
         {/* Mobile Footer Navigation */}
         <MobileFooter />
