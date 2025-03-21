@@ -259,7 +259,7 @@ export default function PlayerPage() {
         </div>
 
         {/* Main content area */}
-        <div className="flex-1 bg-white max-w-3xl">
+        <div className="flex-1 bg-white max-w-4xl">
           <div className="relative">
             {/* Main visualization image - Quantum cat visualization */}
             <div className="w-full bg-black">
